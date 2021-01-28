@@ -1,4 +1,4 @@
-#PART 8.1
+#PART 8.3
 
 #Call for installation of required libraries
 
@@ -75,14 +75,6 @@ save(tweets, file = "data.RData")
 
 # To load the data again
 load("data.RData")
-
-
-#Data Cleaning : Sentiment Orientation
-tweets <- tweets %>% filter(sentiment!="Neutral")
-# we are going to need the target variable to be categorical
-tweets <- tweets %>% mutate(sentiment=factor(sentiment))
-tweets$text <- gsub("[^[:alnum:][:blank:]?&/\\-]", "", tweets$text)
-
 
 
 
